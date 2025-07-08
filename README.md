@@ -1,16 +1,28 @@
 # flutter_basic
 
-A new Flutter project.
+A beginner-level Flutter project where I explored and practiced all the fundamental Flutter widgets and asset management techniques. The project is designed to run on the web and serves as a hands-on learning experience for understanding Flutter's core components.
 
-## Getting Started
+## 🚀 Features
 
-This project is a starting point for a Flutter application.
+- Implementation of common and essential Flutter widgets:
+  - Text, Image, Icon
+  - Row, Column
+  - Container, Padding, Align
+  - ListView, GridView, etc.
+- Custom and reusable widget creation
+- Asset management (images, fonts, etc.)
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠️ Technologies Used
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Flutter (3.x or later)**
+- **Dart**
+- **Flutter Web**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🌐 How to Run on Web
+
+Make sure you have Flutter installed and web support enabled.
+
+```bash
+flutter devices          # Ensure web device is available
+flutter pub get          # Install dependencies
+flutter run -d chrome    # Run on Chrome browser
