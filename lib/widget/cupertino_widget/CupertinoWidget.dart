@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 // https://docs.flutter.dev/ui/widgets/cupertino
 class CupertinoAppDemo extends StatelessWidget {
@@ -25,6 +26,21 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreen extends State<HomeScreen> {
   bool isSwitched = false;
   String selectedMonth = "January"; // Default value for selected month
+  String fileContent = 'Loading...';
+
+  Future<void> loadText() async {
+    final content = await rootBundle.loadString('assets/data/note.txt');
+    setState(() {
+      fileContent = content;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    loadText();
+  }
+
   @override
   Widget build(BuildContext context) {
     return cupertinoWidgetScreen(context);
@@ -36,6 +52,11 @@ class _HomeScreen extends State<HomeScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          //   const Text(loadTextFile()),
+          Image.asset("assets/images/bird.jpg", width: 500, height: 500),
+
+          Text(fileContent, style: TextStyle(fontFamily: "Libertinus")),
+          const SizedBox(height: 20),
           cupertinoButton(context, "Alert Dialog", () {
             showCupertinoDialog(
               context: context,
